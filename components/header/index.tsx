@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-const Box = styled.div`
-  color: red;
+import { Box } from "components/box";
+
+const HeaderContainer = styled(Box)`
+  position: relative;
+  background: red;
+  height: 50px;
 `;
 
-const Header = () => <Box>Header</Box>;
-
-export default Header;
+export const Header = () => <HeaderContainer>Header</HeaderContainer>;

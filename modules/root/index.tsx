@@ -1,5 +1,3 @@
-import Layout from "components/layout";
+import { Layout } from "components/layout";
 
-const Root = () => <Layout>Hello</Layout>;
-
-export default Root;
+export const Root = () => <Layout />;

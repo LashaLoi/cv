@@ -1,5 +1,5 @@
 import { GlobalStyles } from "theme/global-styles";
-import Root from "modules/root";
+import { Root } from "modules/root";
 
 const IndexPage = () => (
   <>
