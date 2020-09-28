@@ -1,5 +1,11 @@
-import Layout from "components/layout";
+import { GlobalStyles } from "theme/global-styles";
+import Root from "modules/root";
 
-const RootPage = () => <Layout>Hello</Layout>;
+const IndexPage = () => (
+  <>
+    <GlobalStyles />
+    <Root />
+  </>
+);
 
-export default RootPage;
+export default IndexPage;
