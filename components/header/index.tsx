@@ -3,17 +3,60 @@ import { H3 } from "components/headers";
 
 import { theme } from "theme";
 
+import GithubIcon from "./icons/github.svg";
+import TwitterIcon from "./icons/twitter.svg";
+import LinkedinIcon from "./icons/linkedin.svg";
+
+import styled from "styled-components";
+
+const HeaderContainer = styled(Flex)`
+  @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
+    padding-left: ${props => props.theme.space[5]};
+    padding-right: ${props => props.theme.space[5]};
+  }
+
+  @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
+    padding-left: ${props => props.theme.space[9]};
+    padding-right: ${props => props.theme.space[9]};
+  }
+`;
+
+const IconContainer = styled(Box)`
+  cursor: pointer;
+
+  svg {
+    fill: #fff;
+
+    height: ${props => props.theme.space[5]};
+    width: auto;
+  }
+
+  :hover {
+    svg {
+      fill: #a8a8a8;
+    }
+  }
+`;
+
 export const Header = () => (
-  <Flex
+  <HeaderContainer
     justifyContent="space-between"
     height={theme.space[7]}
     alignItems="center"
     bg="darkSecondary"
-    px={9}
+    py={5}
   >
     <H3>AL</H3>
     <Flex>
-      <Box>github</Box> <Box>linkedin</Box> <Box>toggle</Box>
+      <IconContainer mt={1}>
+        <GithubIcon />
+      </IconContainer>
+      <IconContainer mt={1} ml={5}>
+        <TwitterIcon />
+      </IconContainer>
+      <IconContainer mt={1} ml={5}>
+        <LinkedinIcon />
+      </IconContainer>
     </Flex>
-  </Flex>
+  </HeaderContainer>
 );

@@ -11,9 +11,27 @@ export type ColorProps = {
   bg?: CSS.Property.Color;
 };
 
+export class BreakpointsArray extends Array<number> {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+
+  constructor() {
+    const items = [0, 669, 948, 1220];
+
+    super(...items);
+
+    this.xs = items[0];
+    this.sm = items[1];
+    this.md = items[2];
+    this.lg = items[3];
+  }
+}
+
 export type Theme = {
   layers: Record<string, number>;
-  breakpoints: any;
+  breakpoints: BreakpointsArray;
   colors: Palette;
   fonts: Fonts;
   space: string[];
@@ -33,7 +51,7 @@ export const theme: Theme = {
     modalShim: 9998 /* the layer below a modal */,
     modal: 9999
   },
-  breakpoints: [0, 669, 948, 1220],
+  breakpoints: new BreakpointsArray(),
   space: [
     // /////////////////////////////////
     /* DO NOT EVER MODIFY THIS ARRAY */
