@@ -10,7 +10,7 @@ import {
 } from "theme";
 import { display, verticalAlign } from "styled-system";
 
-type TextProps = {
+export type TextProps = {
   children?: React.ReactNode;
   as?: any;
   htmlFor?: string;
