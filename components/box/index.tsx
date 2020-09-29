@@ -86,6 +86,19 @@ export type BoxProps = SpaceProps &
   MinWidthProps &
   ZIndexProps;
 
+export type FlexContainerProps = BoxProps &
+  AlignItemsProps &
+  FlexDirectionProps &
+  JustifyContentProps &
+  FlexWrapProps &
+  AlignSelfProps;
+
+export type FlexItemProps = FlexBasisProps &
+  FlexProps &
+  FlexContainerProps &
+  FlexGrowProps &
+  OrderProps;
+
 export const Box = styled.div<BoxProps>`
   box-sizing: border-box;
   ${space}
@@ -115,19 +128,6 @@ export const Box = styled.div<BoxProps>`
   ${zIndex}
   ${order}
 `;
-
-export type FlexContainerProps = BoxProps &
-  AlignItemsProps &
-  FlexDirectionProps &
-  JustifyContentProps &
-  FlexWrapProps &
-  AlignSelfProps;
-
-export type FlexItemProps = FlexBasisProps &
-  FlexProps &
-  FlexContainerProps &
-  FlexGrowProps &
-  OrderProps;
 
 export const Flex = styled(Box)<FlexContainerProps>`
   display: flex;

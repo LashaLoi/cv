@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import { display, verticalAlign } from "styled-system";
+
 import { BoxProps } from "components/box";
+
 import {
   FontConfigurations,
   textDecoration,
@@ -8,7 +11,6 @@ import {
   TypographyProps,
   whiteSpace
 } from "theme";
-import { display, verticalAlign } from "styled-system";
 
 export type TextProps = {
   children?: React.ReactNode;

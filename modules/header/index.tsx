@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 import { Flex, Box } from "components/box";
 import { H3 } from "components/headers";
 
@@ -5,9 +7,7 @@ import { theme } from "theme";
 
 import GithubIcon from "./icons/github.svg";
 import TwitterIcon from "./icons/twitter.svg";
-import LinkedinIcon from "./icons/linkedin.svg";
-
-import styled from "styled-components";
+import LinkedInIcon from "./icons/linkedin.svg";
 
 const HeaderContainer = styled(Flex)`
   @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
@@ -33,7 +33,7 @@ const IconContainer = styled(Box)`
 
   :hover {
     svg {
-      fill: #a8a8a8;
+      fill: ${props => props.theme.colors.grey};
     }
   }
 `;
@@ -55,7 +55,7 @@ export const Header = () => (
         <TwitterIcon />
       </IconContainer>
       <IconContainer mt={1} ml={5}>
-        <LinkedinIcon />
+        <LinkedInIcon />
       </IconContainer>
     </Flex>
   </HeaderContainer>

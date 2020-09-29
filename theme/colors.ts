@@ -20,7 +20,8 @@ export type Color =
   | "astralBlue"
   | "white"
   | "darkPrimary"
-  | "darkSecondary";
+  | "darkSecondary"
+  | "grey";
 
 export type Palette = Record<Color, string>;
 
@@ -49,7 +50,7 @@ export const colors: Palette = {
   astralBlue: "#337ab7",
 
   white: "#ffffff",
-
   darkPrimary: "#08132a",
-  darkSecondary: "#1a1e3b"
+  darkSecondary: "#1a1e3b",
+  grey: "#a8a8a8"
 };

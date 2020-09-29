@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { TextProps } from "components/text";
 import { Box } from "components/box";
 
 import {
@@ -9,7 +10,6 @@ import {
   FontConfigurations as FConf,
   textDecoration
 } from "theme";
-import { TextProps } from "components/text";
 
 const Header = styled(Box)`
   ${typography}

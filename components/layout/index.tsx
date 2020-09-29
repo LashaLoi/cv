@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-import { Header } from "components/header";
+import { Header } from "modules/header";
+
 import { Box, Flex } from "components/box";
 
 const NavHeader = styled(Box)`
