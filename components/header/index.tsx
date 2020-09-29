@@ -1,11 +1,19 @@
-import styled from "styled-components";
+import { Flex, Box } from "components/box";
+import { H3 } from "components/headers";
 
-import { Box } from "components/box";
+import { theme } from "theme";
 
-const HeaderContainer = styled(Box)`
-  position: relative;
-  background: red;
-  height: 50px;
-`;
-
-export const Header = () => <HeaderContainer>Header</HeaderContainer>;
+export const Header = () => (
+  <Flex
+    justifyContent="space-between"
+    height={theme.space[7]}
+    alignItems="center"
+    bg="darkSecondary"
+    px={9}
+  >
+    <H3>AL</H3>
+    <Flex>
+      <Box>github</Box> <Box>linkedin</Box> <Box>toggle</Box>
+    </Flex>
+  </Flex>
+);

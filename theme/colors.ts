@@ -18,7 +18,9 @@ export type Color =
   | "lightSalmon"
   | "melrose"
   | "astralBlue"
-  | "white";
+  | "white"
+  | "darkPrimary"
+  | "darkSecondary";
 
 export type Palette = Record<Color, string>;
 
@@ -46,5 +48,8 @@ export const colors: Palette = {
   melrose: "#cfc6ff",
   astralBlue: "#337ab7",
 
-  white: "#ffffff"
+  white: "#ffffff",
+
+  darkPrimary: "#08132a",
+  darkSecondary: "#1a1e3b"
 };

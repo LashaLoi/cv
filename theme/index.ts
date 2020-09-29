@@ -1,19 +1,19 @@
 import CSS from "csstype";
+
 import { fonts, Fonts } from "./typography";
 import { colors, Palette } from "./colors";
-import { BreakpointsArray } from "./brackpoints";
 
 export * from "./colors";
 export * from "./typography";
 
-export interface ColorProps {
+export type ColorProps = {
   color?: CSS.Property.Color;
   bg?: CSS.Property.Color;
-}
+};
 
 export type Theme = {
   layers: Record<string, number>;
-  breakpoints: BreakpointsArray;
+  breakpoints: any;
   colors: Palette;
   fonts: Fonts;
   space: string[];
@@ -33,7 +33,7 @@ export const theme: Theme = {
     modalShim: 9998 /* the layer below a modal */,
     modal: 9999
   },
-  breakpoints: new BreakpointsArray([669, 948, 1220]),
+  breakpoints: [0, 669, 948, 1220],
   space: [
     // /////////////////////////////////
     /* DO NOT EVER MODIFY THIS ARRAY */
