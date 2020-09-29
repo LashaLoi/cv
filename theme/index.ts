@@ -1,9 +1,15 @@
+import CSS from "csstype";
 import { fonts, Fonts } from "./typography";
 import { colors, Palette } from "./colors";
 import { BreakpointsArray } from "./brackpoints";
 
 export * from "./colors";
 export * from "./typography";
+
+export interface ColorProps {
+  color?: CSS.Property.Color;
+  bg?: CSS.Property.Color;
+}
 
 export type Theme = {
   layers: Record<string, number>;

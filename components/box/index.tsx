@@ -11,7 +11,6 @@ import {
   BordersProps,
   BorderTopProps,
   BorderWidthProps,
-  ColorProps,
   DisplayProps,
   LeftProps,
   BottomProps,
@@ -55,10 +54,16 @@ import {
   flexWrap,
   FlexWrapProps,
   justifyContent,
-  JustifyContentProps
+  JustifyContentProps,
+  FlexBasisProps,
+  FlexGrowProps,
+  FlexProps,
+  OrderProps
 } from "styled-system";
 
-type BoxProps = SpaceProps &
+import { ColorProps } from "theme";
+
+export type BoxProps = SpaceProps &
   OverflowProps &
   TextAlignProps &
   WidthProps &
@@ -111,12 +116,18 @@ export const Box = styled.div<BoxProps>`
   ${order}
 `;
 
-type FlexContainerProps = BoxProps &
+export type FlexContainerProps = BoxProps &
   AlignItemsProps &
   FlexDirectionProps &
   JustifyContentProps &
   FlexWrapProps &
   AlignSelfProps;
+
+export type FlexItemProps = FlexBasisProps &
+  FlexProps &
+  FlexContainerProps &
+  FlexGrowProps &
+  OrderProps;
 
 export const Flex = styled(Box)<FlexContainerProps>`
   display: flex;

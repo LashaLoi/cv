@@ -16,6 +16,7 @@ import {
   SpaceProps,
   color
 } from "styled-system";
+import { ColorProps } from "theme";
 
 import {
   TextTransformProps,
@@ -46,7 +47,8 @@ export type TypographyProps = FontFamilyProps &
   TextTransformProps &
   TextDecorationProps &
   WhiteSpaceProps &
-  SpaceProps;
+  SpaceProps &
+  ColorProps;
 
 type TypographySchemes =
   | "h1"
