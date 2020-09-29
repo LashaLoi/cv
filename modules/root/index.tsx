@@ -1,3 +1,16 @@
-import { Layout } from "components/layout";
+import styled from "styled-components";
 
-export const Root = () => <Layout />;
+import { Layout } from "components/layout";
+import { Box } from "components/box";
+
+const Item = styled(Box)`
+  width: 100%;
+  background: ${props => props.theme.colors.evergreen};
+`;
+
+export const Root = () => (
+  <>
+    <Item>Hello World</Item>
+    <Layout />
+  </>
+);
