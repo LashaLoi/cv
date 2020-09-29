@@ -29,8 +29,17 @@ export class BreakpointsArray extends Array<number> {
   }
 }
 
+type Layers =
+  | "default"
+  | "middle"
+  | "top"
+  | "navigation"
+  | "menu"
+  | "modalShim"
+  | "modal";
+
 export type Theme = {
-  layers: Record<string, number>;
+  layers: Record<Layers, number>;
   breakpoints: BreakpointsArray;
   colors: Palette;
   fonts: Fonts;

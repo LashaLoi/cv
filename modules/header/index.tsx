@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import { Flex, Box } from "components/box";
 import { H3 } from "components/headers";
+import { Switch } from "components/switch";
+import { FadeIn } from "components/fade/in";
 
 import { theme } from "theme";
 
@@ -46,17 +49,30 @@ export const Header = () => (
     bg="darkSecondary"
     py={5}
   >
-    <H3>AL</H3>
-    <Flex>
-      <IconContainer mt={1}>
-        <GithubIcon />
-      </IconContainer>
-      <IconContainer mt={1} ml={5}>
-        <TwitterIcon />
-      </IconContainer>
-      <IconContainer mt={1} ml={5}>
-        <LinkedInIcon />
-      </IconContainer>
+    <FadeIn>
+      <H3>AL</H3>
+    </FadeIn>
+    <Flex mt={1}>
+      <FadeIn delayMs={0.2}>
+        <IconContainer>
+          <GithubIcon />
+        </IconContainer>
+      </FadeIn>
+      <FadeIn delayMs={0.3}>
+        <IconContainer ml={5}>
+          <TwitterIcon />
+        </IconContainer>
+      </FadeIn>
+      <FadeIn delayMs={0.4}>
+        <IconContainer ml={5}>
+          <LinkedInIcon />
+        </IconContainer>
+      </FadeIn>
+      <FadeIn delayMs={0.5}>
+        <Box ml={5}>
+          <Switch />
+        </Box>
+      </FadeIn>
     </Flex>
   </HeaderContainer>
 );

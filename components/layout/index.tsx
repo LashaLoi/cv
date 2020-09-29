@@ -1,13 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled from "styled-components";
+
+import { useHeight } from "hooks/useHeight";
 
 import { Header } from "modules/header";
 
 import { Box, Flex } from "components/box";
+import { theme } from "theme";
 
 const NavHeader = styled(Box)`
   position: fixed;
   width: 100%;
+  z-index: ${props => props.theme.layers.navigation};
 `;
 
 const Container = styled(Flex)`
@@ -17,25 +21,17 @@ const Container = styled(Flex)`
   height: 100vh;
 `;
 
-export const Layout: React.FC = () => {
-  const [headerHeight, setHeaderHeight] = useState(0);
-
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const height = headerRef.current?.clientHeight;
-
-    height && setHeaderHeight(height);
-  }, [headerRef]);
+export const Layout: React.FC = ({ children }) => {
+  const { headerRef, headerHeight } = useHeight();
 
   return (
     <Container>
       <NavHeader ref={headerRef}>
         <Header />
       </NavHeader>
-      <Box minHeight="100vh" mt={headerHeight}>
-        <Box height={2000}>Hello</Box>
-      </Box>
+      {/* <Box minHeight="100vh" mt={headerHeight} zIndex={theme.layers.default}>
+        {children}
+      </Box> */}
     </Container>
   );
 };
