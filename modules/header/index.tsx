@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 import { Flex, Box } from "components/box";
 import { H3 } from "components/headers";
