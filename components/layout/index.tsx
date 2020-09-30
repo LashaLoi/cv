@@ -6,7 +6,7 @@ import { useHeight } from "hooks/useHeight";
 import { Header } from "modules/header";
 
 import { Box, Flex } from "components/box";
-import { theme } from "theme";
+import { useTheme } from "theme";
 
 const NavHeader = styled(Box)`
   position: fixed;
@@ -23,6 +23,7 @@ const Container = styled(Flex)`
 
 export const Layout: React.FC = ({ children }) => {
   const { headerRef, headerHeight } = useHeight();
+  const theme = useTheme();
 
   return (
     <Container>

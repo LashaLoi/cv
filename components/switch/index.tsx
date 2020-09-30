@@ -1,29 +1,24 @@
-import { useState, memo } from "react";
+import { memo } from "react";
 import { motion } from "framer-motion";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+
+import { useThemeModeContext } from "theme/context";
 
 import { Box } from "components/box";
 
 const MotionBox = styled(motion.div)`
   width: 18px;
   height: 18px;
-  background-color: white;
+  background-color: ${props => props.theme.colors.primary};
   border-radius: 40px;
 `;
 
-const SwitchBox = styled(Box)<{ isOn: boolean }>`
-  ${props =>
-    props.isOn
-      ? css`
-          justify-content: flex-end;
-        `
-      : css`
-          justify-content: flex-start;
-        `};
+const SwitchBox = styled(Box)<{ isOn: boolean; darkMode: boolean }>`
+  justify-content: ${props => (props.isOn ? "flex-end" : "flex-start")};
+  background-color: ${props => (props.darkMode ? "white" : "#536390")};
 
   width: 40px;
   height: 25px;
-  background-color: rgba(255, 255, 255, 0.4);
   display: flex;
 
   border-radius: 50px;
@@ -31,19 +26,18 @@ const SwitchBox = styled(Box)<{ isOn: boolean }>`
   cursor: pointer;
 `;
 
+const transition = {
+  type: "spring",
+  stiffness: 700,
+  damping: 30
+};
+
 export const Switch = memo(() => {
-  const [toggle, setToggle] = useState(false);
+  const { lightMode, darkMode, toggleMode } = useThemeModeContext();
 
   return (
-    <SwitchBox isOn={toggle} onClick={() => setToggle(state => !state)}>
-      <MotionBox
-        layout
-        transition={{
-          type: "spring",
-          stiffness: 700,
-          damping: 30
-        }}
-      />
+    <SwitchBox isOn={lightMode} darkMode={darkMode} onClick={toggleMode}>
+      <MotionBox layout transition={transition} />
     </SwitchBox>
   );
 });
