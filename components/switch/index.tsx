@@ -33,10 +33,15 @@ const transition = {
 }
 
 export const Switch = memo(() => {
-  const { lightMode, darkMode, toggleMode } = useThemeModeContext()
+  const { lightMode, toggleMode } = useThemeModeContext()
+
+  const handleToggle = () => {
+    localStorage.setItem("mode", lightMode ? "dark" : "light")
+    toggleMode()
+  }
 
   return (
-    <SwitchBox isOn={lightMode} darkMode={darkMode} onClick={toggleMode}>
+    <SwitchBox isOn={lightMode} darkMode={!lightMode} onClick={handleToggle}>
       <MotionBox layout transition={transition} />
     </SwitchBox>
   )

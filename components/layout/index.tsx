@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 
 import { useHeight } from "hooks/useHeight"
+import { useTheme } from "hooks/useTheme"
 
 import { Header } from "modules/header"
 
 import { Box, Flex } from "components/box"
-import { useTheme } from "theme"
 
 const NavHeader = styled(Box)`
   position: fixed;

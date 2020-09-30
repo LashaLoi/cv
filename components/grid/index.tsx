@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { Box, Flex, BoxProps, FlexContainerProps, FlexItemProps } from "components/box"
 
-import { useTheme } from "theme"
+import { useTheme } from "hooks/useTheme"
 
 type GridProps = {
   rowProps?: {}

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 
 export type Mode = "dark" | "light"
 
@@ -21,8 +21,13 @@ export const ThemeModeContext = createContext<ThemeMode>({
 export const ThemeModeProvider: React.FC = ({ children }) => {
   const [mode, setMode] = useState<Mode>("dark")
 
-  const toggleMode = () => setMode(mode => (mode === "dark" ? "light" : "dark"))
+  useEffect(() => {
+    const mode = localStorage.getItem("mode")
 
+    setMode(mode ? (mode as Mode) : "dark")
+  }, [])
+
+  const toggleMode = () => setMode(mode => (mode === "dark" ? "light" : "dark"))
   const handleSetMode = (mode: Mode) => setMode(mode)
 
   const value = {

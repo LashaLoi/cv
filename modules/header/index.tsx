@@ -5,7 +5,7 @@ import { H3 } from "components/headers"
 import { Switch } from "components/switch"
 import { FadeIn } from "components/fade/in"
 
-import { useTheme } from "theme"
+import { useTheme } from "hooks/useTheme"
 
 import GithubIcon from "./icons/github.svg"
 import TwitterIcon from "./icons/twitter.svg"
