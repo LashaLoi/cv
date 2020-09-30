@@ -73,8 +73,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     margin: 0;
     padding: 0;
 
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.darkPrimary};
+    color: ${props => props.theme.colors.font};
+    background-color: ${props => props.theme.colors.primary};
     min-width: 375px; /* We lock at 375 min and zoom viewport to fit for smaller devices */
   }
 

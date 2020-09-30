@@ -1,7 +1,8 @@
 import CSS from "csstype";
 
 import { fonts, Fonts } from "./typography";
-import { colors, Palette } from "./colors";
+import { darkColors, lightColors, Palette } from "./colors";
+import { useThemeModeContext } from "./context";
 
 export * from "./colors";
 export * from "./typography";
@@ -48,8 +49,8 @@ export type Theme = {
   maxWidths: number[];
 };
 
-export const theme: Theme = {
-  colors,
+export const theme = (darkMode: boolean): Theme => ({
+  colors: darkMode ? darkColors : lightColors,
   fonts,
   layers: {
     default: 0,
@@ -78,4 +79,10 @@ export const theme: Theme = {
   ],
   reducedOpacity: 0.75,
   maxWidths: [320, 433, 947, 1219, 1439]
+});
+
+export const useTheme = () => {
+  const { darkMode } = useThemeModeContext();
+
+  return theme(darkMode);
 };
