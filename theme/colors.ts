@@ -21,9 +21,9 @@ export type Color =
   | "white"
   | "darkPrimary"
   | "darkSecondary"
-  | "grey";
+  | "grey"
 
-export type Palette = Record<Color, string>;
+export type Palette = Record<Color, string>
 
 export const colors: Palette = {
   paleGrey: "#f9fdfd",
@@ -53,4 +53,4 @@ export const colors: Palette = {
   darkPrimary: "#08132a",
   darkSecondary: "#1a1e3b",
   grey: "#a8a8a8"
-};
+}

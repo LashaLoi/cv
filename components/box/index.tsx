@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components"
 import {
   SpaceProps,
   OverflowProps,
@@ -59,9 +59,9 @@ import {
   FlexGrowProps,
   FlexProps,
   OrderProps
-} from "styled-system";
+} from "styled-system"
 
-import { ColorProps } from "theme";
+import { ColorProps } from "theme"
 
 export type BoxProps = SpaceProps &
   OverflowProps &
@@ -84,20 +84,16 @@ export type BoxProps = SpaceProps &
   PositionProps &
   AlignSelfProps &
   MinWidthProps &
-  ZIndexProps;
+  ZIndexProps
 
 export type FlexContainerProps = BoxProps &
   AlignItemsProps &
   FlexDirectionProps &
   JustifyContentProps &
   FlexWrapProps &
-  AlignSelfProps;
+  AlignSelfProps
 
-export type FlexItemProps = FlexBasisProps &
-  FlexProps &
-  FlexContainerProps &
-  FlexGrowProps &
-  OrderProps;
+export type FlexItemProps = FlexBasisProps & FlexProps & FlexContainerProps & FlexGrowProps & OrderProps
 
 export const Box = styled.div<BoxProps>`
   box-sizing: border-box;
@@ -127,7 +123,7 @@ export const Box = styled.div<BoxProps>`
   ${alignSelf}
   ${zIndex}
   ${order}
-`;
+`
 
 export const Flex = styled(Box)<FlexContainerProps>`
   display: flex;
@@ -136,4 +132,4 @@ export const Flex = styled(Box)<FlexContainerProps>`
   ${flexDirection}
   ${flexWrap}
   ${alignSelf}
-`;
+`

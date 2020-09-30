@@ -5,7 +5,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "prettify": "prettier --write '**/*.{ts,js,tsx}'"
   },
   "dependencies": {
     "framer-motion": "^2.7.6",
@@ -26,6 +27,7 @@
     "babel-plugin-styled-components": "^1.11.1",
     "csstype": "^3.0.3",
     "next-fonts": "^1.4.0",
+    "prettier": "^2.1.2",
     "typescript": "4.0"
   },
   "license": "MIT"
