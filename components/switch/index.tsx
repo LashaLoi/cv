@@ -2,9 +2,10 @@ import { memo } from "react"
 import { motion } from "framer-motion"
 import styled from "styled-components"
 
-import { useThemeModeContext } from "theme/context"
+import { Mode, useThemeModeContext } from "theme/context"
 
 import { Box } from "components/box"
+import { useLocalStorage } from "hooks/useLocalStorage"
 
 const MotionBox = styled(motion.div)`
   width: 18px;
@@ -33,10 +34,11 @@ const transition = {
 }
 
 export const Switch = memo(() => {
+  const { setItem } = useLocalStorage()
   const { lightMode, toggleMode } = useThemeModeContext()
 
   const handleToggle = () => {
-    localStorage.setItem("mode", lightMode ? "dark" : "light")
+    setItem("mode", lightMode ? "dark" : "light")
     toggleMode()
   }
 

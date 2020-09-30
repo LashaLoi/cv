@@ -3,16 +3,18 @@ import { GlobalStyles } from "theme/global-styles"
 import { Root } from "modules/root"
 import { ThemeProvider } from "styled-components"
 
-import { ThemeModeProvider } from "theme/context"
+import { Mode, ThemeModeProvider } from "theme/context"
 import { useTheme } from "hooks/useTheme"
+import { useLocalStorage } from "hooks/useLocalStorage"
 
 const Main = () => {
+  const { getItem, setItem } = useLocalStorage()
   const theme = useTheme()
 
   useEffect(() => {
-    const item = localStorage.getItem("mode")
+    const item = getItem("mode")
 
-    !item && localStorage.setItem("mode", "dark")
+    if (!item) setItem("mode", "dark")
   }, [])
 
   return (

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
+import { useLocalStorage } from "hooks/useLocalStorage"
 
 export type Mode = "dark" | "light"
 
@@ -19,12 +20,13 @@ export const ThemeModeContext = createContext<ThemeMode>({
 })
 
 export const ThemeModeProvider: React.FC = ({ children }) => {
+  const { getItem } = useLocalStorage()
   const [mode, setMode] = useState<Mode>("dark")
 
   useEffect(() => {
-    const mode = localStorage.getItem("mode")
+    const mode = getItem("mode")
 
-    setMode(mode ? (mode as Mode) : "dark")
+    setMode((mode as Mode) ?? "dark")
   }, [])
 
   const toggleMode = () => setMode(mode => (mode === "dark" ? "light" : "dark"))
