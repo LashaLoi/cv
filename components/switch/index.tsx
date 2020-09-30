@@ -2,7 +2,7 @@ import { memo } from "react"
 import { motion } from "framer-motion"
 import styled from "styled-components"
 
-import { Mode, useThemeModeContext } from "theme/context"
+import { useThemeModeContext } from "theme/context"
 
 import { Box } from "components/box"
 import { useLocalStorage } from "hooks/useLocalStorage"

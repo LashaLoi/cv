@@ -30,7 +30,7 @@ export const Layout: React.FC = ({ children }) => {
       <NavHeader ref={headerRef}>
         <Header />
       </NavHeader>
-      <Box minHeight="100vh" mt={headerHeight} zIndex={theme.layers.default}>
+      <Box mt={headerHeight} zIndex={theme.layers.default}>
         {children}
       </Box>
     </Container>

@@ -7,11 +7,9 @@ export const FadeIn: React.FC<{ delayMs?: number }> = memo(({ delayMs = 0.1, chi
     animate="visible"
     variants={{
       hidden: {
-        scale: 0.8,
         opacity: 0
       },
       visible: {
-        scale: 1,
         opacity: 1,
         transition: {
           delay: delayMs

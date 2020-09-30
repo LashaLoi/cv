@@ -3,7 +3,7 @@ import { GlobalStyles } from "theme/global-styles"
 import { Root } from "modules/root"
 import { ThemeProvider } from "styled-components"
 
-import { Mode, ThemeModeProvider } from "theme/context"
+import { ThemeModeProvider } from "theme/context"
 import { useTheme } from "hooks/useTheme"
 import { useLocalStorage } from "hooks/useLocalStorage"
 

@@ -1,10 +1,10 @@
-import Link from "next/link"
 import styled from "styled-components"
 
 import { Flex, Box } from "components/box"
 import { H3 } from "components/headers"
 import { Switch } from "components/switch"
 import { FadeIn } from "components/fade/in"
+import { TargetLink } from "components/link"
 
 import { useTheme } from "hooks/useTheme"
 
@@ -12,7 +12,13 @@ import GithubIcon from "./icons/github.svg"
 import TwitterIcon from "./icons/twitter.svg"
 import LinkedInIcon from "./icons/linkedin.svg"
 
-const HeaderContainer = styled(Flex)`
+const HeaderContainer = styled(Flex).attrs({
+  justifyContent: "space-between",
+
+  alignItems: "center",
+  bg: "secondary",
+  py: 5
+})`
   color: white;
 
   @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
@@ -47,31 +53,31 @@ export const Header = () => {
   const theme = useTheme()
 
   return (
-    <HeaderContainer justifyContent="space-between" height={theme.space[7]} alignItems="center" bg="secondary" py={5}>
+    <HeaderContainer height={theme.space[7]}>
       <FadeIn>
         <H3>AL</H3>
       </FadeIn>
       <Flex mt={1}>
         <FadeIn delayMs={0.2}>
-          <a href="https://github.com/LashaLoi" target="_blank">
+          <TargetLink href="https://github.com/LashaLoi">
             <IconContainer>
               <GithubIcon />
             </IconContainer>
-          </a>
+          </TargetLink>
         </FadeIn>
         <FadeIn delayMs={0.3}>
-          <a href="https://twitter.com/sideswipeloi" target="_blank">
+          <TargetLink href="https://twitter.com/sideswipeloi">
             <IconContainer ml={5}>
               <TwitterIcon />
             </IconContainer>
-          </a>
+          </TargetLink>
         </FadeIn>
         <FadeIn delayMs={0.4}>
-          <a href="https://www.linkedin.com/in/alexey-loi-82b670185/" target="_blank">
+          <TargetLink href="https://www.linkedin.com/in/alexey-loi-82b670185/">
             <IconContainer ml={5}>
               <LinkedInIcon />
             </IconContainer>
-          </a>
+          </TargetLink>
         </FadeIn>
         <FadeIn delayMs={0.5}>
           <Box ml={5}>

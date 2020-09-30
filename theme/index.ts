@@ -72,3 +72,5 @@ export const theme = (isDarkMode: boolean): Theme => ({
   reducedOpacity: 0.75,
   maxWidths: [320, 433, 947, 1219, 1439]
 })
+
+export default theme(true)
