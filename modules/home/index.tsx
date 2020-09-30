@@ -6,14 +6,17 @@ import { FadeIn } from "components/fade/in"
 import { motion } from "framer-motion"
 
 const MainPhoto = styled.img`
-  border-radius: 50%;
-  border: 5px solid ${props => props.theme.colors.font};
-
-  height: 300px;
+  @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
+    height: 300px;
+  }
 
   @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
-    height: 230px;
+    height: 250px;
   }
+
+  border-radius: 50%;
+
+  border: 5px solid ${props => props.theme.colors.font};
 `
 
 const HomeContainer = styled(Flex)`
@@ -31,7 +34,9 @@ const HomeContainer = styled(Flex)`
 `
 
 const Grid = styled(_Grid)`
-  margin-top: ${props => props.theme.space[9]};
+  @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
+    margin-top: ${props => props.theme.space[9]};
+  }
 
   @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
     margin-top: ${props => props.theme.space[7]};
@@ -62,7 +67,7 @@ const Line = styled(motion.div)`
   width: 0;
 `
 
-const HomeFlex = styled(Flex)`
+const MainFlex = styled(Flex)`
   flex-direction: row;
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
@@ -70,11 +75,11 @@ const HomeFlex = styled(Flex)`
   }
 `
 
-const DataContainer = styled(Flex)`
+const NestedFlex = styled(Flex)`
   margin-left: ${props => props.theme.space[7]};
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
-    margin-left: ${props => props.theme.space[3]};
+    margin-left: ${props => props.theme.space[4]};
   }
 `
 
@@ -83,23 +88,23 @@ export const Home = () => (
     <Col cols={[4, 4, 12, 12]}>
       <FadeIn>
         <HomeContainer>
-          <HomeFlex alignItems="center">
+          <MainFlex alignItems="center">
             <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
-            <DataContainer flexDirection="column" my={7}>
+            <NestedFlex ml={7} flexDirection="column" my={7}>
               <FadeIn delayMs={0.2}>
                 <Name as="p">Aliaksei Loi</Name>
               </FadeIn>
               <FadeIn delayMs={0.3}>
-                <Desc as="p" mt={4}>
+                <Desc mt={4} width="110%">
                   Frontend Software Engineer
                 </Desc>
 
                 <Box mt={4}>
-                  <Line animate={{ width: "100%" }} transition={{ delay: 0.6 }} />
+                  <Line animate={{ width: "105%" }} transition={{ delay: 0.6 }} />
                 </Box>
               </FadeIn>
-            </DataContainer>
-          </HomeFlex>
+            </NestedFlex>
+          </MainFlex>
         </HomeContainer>
       </FadeIn>
     </Col>
