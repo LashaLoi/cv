@@ -1,14 +1,14 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react"
 
-export type Mode = "dark" | "light";
+export type Mode = "dark" | "light"
 
 export type ThemeMode = {
-  mode: Mode;
-  darkMode: boolean;
-  lightMode: boolean;
-  toggleMode: () => void;
-  setMode: (mode: Mode) => void;
-};
+  mode: Mode
+  darkMode: boolean
+  lightMode: boolean
+  toggleMode: () => void
+  setMode: (mode: Mode) => void
+}
 
 export const ThemeModeContext = createContext<ThemeMode>({
   mode: "dark",
@@ -16,15 +16,14 @@ export const ThemeModeContext = createContext<ThemeMode>({
   lightMode: false,
   setMode: () => {},
   toggleMode: () => {}
-});
+})
 
 export const ThemeModeProvider: React.FC = ({ children }) => {
-  const [mode, setMode] = useState<Mode>("dark");
+  const [mode, setMode] = useState<Mode>("dark")
 
-  const toggleMode = () =>
-    setMode(mode => (mode === "dark" ? "light" : "dark"));
+  const toggleMode = () => setMode(mode => (mode === "dark" ? "light" : "dark"))
 
-  const handleSetMode = (mode: Mode) => setMode(mode);
+  const handleSetMode = (mode: Mode) => setMode(mode)
 
   const value = {
     mode,
@@ -32,13 +31,9 @@ export const ThemeModeProvider: React.FC = ({ children }) => {
     setMode: handleSetMode,
     darkMode: mode === "dark",
     lightMode: mode === "light"
-  };
+  }
 
-  return (
-    <ThemeModeContext.Provider value={value}>
-      {children}
-    </ThemeModeContext.Provider>
-  );
-};
+  return <ThemeModeContext.Provider value={value}>{children}</ThemeModeContext.Provider>
+}
 
-export const useThemeModeContext = () => useContext(ThemeModeContext);
+export const useThemeModeContext = () => useContext(ThemeModeContext)

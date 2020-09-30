@@ -1,20 +1,20 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components"
 
-import { Theme } from "theme";
+import { Theme } from "theme"
 
-const NBInternationalLightWoff = "/static/fonts/NBInternationalLight.woff";
-const NBInternationalLightWoff2 = "/static/fonts/NBInternationalLight.woff2";
+const NBInternationalLightWoff = "/static/fonts/NBInternationalLight.woff"
+const NBInternationalLightWoff2 = "/static/fonts/NBInternationalLight.woff2"
 
-const NBInternationalBoldWoff = "/static/fonts/NBInternationalBold.woff";
-const NBInternationalBoldWoff2 = "/static/fonts/NBInternationalBold.woff2";
+const NBInternationalBoldWoff = "/static/fonts/NBInternationalBold.woff"
+const NBInternationalBoldWoff2 = "/static/fonts/NBInternationalBold.woff2"
 
-const NBInternationalMonoTTF = "/static/fonts/NBInternationalMono.ttf";
+const NBInternationalMonoTTF = "/static/fonts/NBInternationalMono.ttf"
 
-const CheltenhamStdEOT = "/static/fonts/CheltenhamStd.eot";
-const CheltenhamStdWoff = "/static/fonts/CheltenhamStd.woff";
-const CheltenhamStdWoff2 = "/static/fonts/CheltenhamStd.woff2";
+const CheltenhamStdEOT = "/static/fonts/CheltenhamStd.eot"
+const CheltenhamStdWoff = "/static/fonts/CheltenhamStd.woff"
+const CheltenhamStdWoff2 = "/static/fonts/CheltenhamStd.woff2"
 
-const NBInternationalItalicOtf = "/static/fonts/NBInternationalItalic.otf";
+const NBInternationalItalicOtf = "/static/fonts/NBInternationalItalic.otf"
 
 export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   @font-face {
@@ -87,4 +87,4 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   *::after {
     box-sizing: inherit;
   }
-`;
+`

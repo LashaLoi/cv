@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-import { Flex, Box } from "components/box";
-import { H3 } from "components/headers";
-import { Switch } from "components/switch";
-import { FadeIn } from "components/fade/in";
+import { Flex, Box } from "components/box"
+import { H3 } from "components/headers"
+import { Switch } from "components/switch"
+import { FadeIn } from "components/fade/in"
 
-import { useTheme } from "theme";
+import { useTheme } from "theme"
 
-import GithubIcon from "./icons/github.svg";
-import TwitterIcon from "./icons/twitter.svg";
-import LinkedInIcon from "./icons/linkedin.svg";
+import GithubIcon from "./icons/github.svg"
+import TwitterIcon from "./icons/twitter.svg"
+import LinkedInIcon from "./icons/linkedin.svg"
 
 const HeaderContainer = styled(Flex)`
   color: white;
@@ -23,7 +23,7 @@ const HeaderContainer = styled(Flex)`
     padding-left: ${props => props.theme.space[9]};
     padding-right: ${props => props.theme.space[9]};
   }
-`;
+`
 
 const IconContainer = styled(Box)`
   cursor: pointer;
@@ -40,19 +40,13 @@ const IconContainer = styled(Box)`
       fill: ${props => props.theme.colors.grey};
     }
   }
-`;
+`
 
 export const Header = () => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   return (
-    <HeaderContainer
-      justifyContent="space-between"
-      height={theme.space[7]}
-      alignItems="center"
-      bg="secondary"
-      py={5}
-    >
+    <HeaderContainer justifyContent="space-between" height={theme.space[7]} alignItems="center" bg="secondary" py={5}>
       <FadeIn>
         <H3>AL</H3>
       </FadeIn>
@@ -79,5 +73,5 @@ export const Header = () => {
         </FadeIn>
       </Flex>
     </HeaderContainer>
-  );
-};
+  )
+}
