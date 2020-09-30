@@ -1,3 +1,4 @@
+import Link from "next/link"
 import styled from "styled-components"
 
 import { Flex, Box } from "components/box"
@@ -52,19 +53,25 @@ export const Header = () => {
       </FadeIn>
       <Flex mt={1}>
         <FadeIn delayMs={0.2}>
-          <IconContainer>
-            <GithubIcon />
-          </IconContainer>
+          <a href="https://github.com/LashaLoi" target="_blank">
+            <IconContainer>
+              <GithubIcon />
+            </IconContainer>
+          </a>
         </FadeIn>
         <FadeIn delayMs={0.3}>
-          <IconContainer ml={5}>
-            <TwitterIcon />
-          </IconContainer>
+          <a href="https://twitter.com/sideswipeloi" target="_blank">
+            <IconContainer ml={5}>
+              <TwitterIcon />
+            </IconContainer>
+          </a>
         </FadeIn>
         <FadeIn delayMs={0.4}>
-          <IconContainer ml={5}>
-            <LinkedInIcon />
-          </IconContainer>
+          <a href="https://www.linkedin.com/in/alexey-loi-82b670185/" target="_blank">
+            <IconContainer ml={5}>
+              <LinkedInIcon />
+            </IconContainer>
+          </a>
         </FadeIn>
         <FadeIn delayMs={0.5}>
           <Box ml={5}>
