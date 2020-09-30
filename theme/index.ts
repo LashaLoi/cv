@@ -1,52 +1,45 @@
-import CSS from "csstype";
+import CSS from "csstype"
 
-import { fonts, Fonts } from "./typography";
-import { colors, Palette } from "./colors";
+import { fonts, Fonts } from "./typography"
+import { colors, Palette } from "./colors"
 
-export * from "./colors";
-export * from "./typography";
+export * from "./colors"
+export * from "./typography"
 
 export type ColorProps = {
-  color?: CSS.Property.Color;
-  bg?: CSS.Property.Color;
-};
+  color?: CSS.Property.Color
+  bg?: CSS.Property.Color
+}
 
 export class BreakpointsArray extends Array<number> {
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
+  xs: number
+  sm: number
+  md: number
+  lg: number
 
   constructor() {
-    const items = [0, 669, 948, 1220];
+    const items = [0, 669, 948, 1220]
 
-    super(...items);
+    super(...items)
 
-    this.xs = items[0];
-    this.sm = items[1];
-    this.md = items[2];
-    this.lg = items[3];
+    this.xs = items[0]
+    this.sm = items[1]
+    this.md = items[2]
+    this.lg = items[3]
   }
 }
 
-type Layers =
-  | "default"
-  | "middle"
-  | "top"
-  | "navigation"
-  | "menu"
-  | "modalShim"
-  | "modal";
+type Layers = "default" | "middle" | "top" | "navigation" | "menu" | "modalShim" | "modal"
 
 export type Theme = {
-  layers: Record<Layers, number>;
-  breakpoints: BreakpointsArray;
-  colors: Palette;
-  fonts: Fonts;
-  space: string[];
-  reducedOpacity: number;
-  maxWidths: number[];
-};
+  layers: Record<Layers, number>
+  breakpoints: BreakpointsArray
+  colors: Palette
+  fonts: Fonts
+  space: string[]
+  reducedOpacity: number
+  maxWidths: number[]
+}
 
 export const theme: Theme = {
   colors,
@@ -78,4 +71,4 @@ export const theme: Theme = {
   ],
   reducedOpacity: 0.75,
   maxWidths: [320, 433, 947, 1219, 1439]
-};
+}

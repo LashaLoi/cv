@@ -15,29 +15,25 @@ import {
   space,
   SpaceProps,
   color
-} from "styled-system";
+} from "styled-system"
 
-import { ColorProps } from "theme";
+import { ColorProps } from "theme"
 
-import {
-  TextTransformProps,
-  TextDecorationProps,
-  WhiteSpaceProps
-} from "./custom-system-types";
+import { TextTransformProps, TextDecorationProps, WhiteSpaceProps } from "./custom-system-types"
 
-export * from "./custom-system-types";
+export * from "./custom-system-types"
 
 export interface Fonts {
-  header: string;
-  paragraph: string;
-  mono: string;
+  header: string
+  paragraph: string
+  mono: string
 }
 
 export const fonts: Fonts = {
   header: "CheltenhamStd",
   paragraph: "NBInternational",
   mono: "NBInternational-Mono"
-};
+}
 
 export type TypographyProps = FontFamilyProps &
   FontSizeProps &
@@ -49,21 +45,11 @@ export type TypographyProps = FontFamilyProps &
   TextDecorationProps &
   WhiteSpaceProps &
   SpaceProps &
-  ColorProps;
+  ColorProps
 
-type TypographySchemes =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "pLg"
-  | "p"
-  | "pSm"
-  | "eyebrow"
-  | "eyebrowSm";
+type TypographySchemes = "h1" | "h2" | "h3" | "h4" | "h5" | "pLg" | "p" | "pSm" | "eyebrow" | "eyebrowSm"
 
-type FontConfigurations = { [key in TypographySchemes]: TypographyProps };
+type FontConfigurations = { [key in TypographySchemes]: TypographyProps }
 
 export const FontConfigurations: FontConfigurations = {
   h1: {
@@ -136,15 +122,6 @@ export const FontConfigurations: FontConfigurations = {
     letterSpacing: 1.25,
     textTransform: "uppercase"
   }
-};
+}
 
-export const typography = compose(
-  fontFamily,
-  fontWeight,
-  fontSize,
-  lineHeight,
-  letterSpacing,
-  textAlign,
-  color,
-  space
-);
+export const typography = compose(fontFamily, fontWeight, fontSize, lineHeight, letterSpacing, textAlign, color, space)

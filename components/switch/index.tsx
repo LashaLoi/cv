@@ -1,15 +1,15 @@
-import { useState, memo } from "react";
-import { motion } from "framer-motion";
-import styled, { css } from "styled-components";
+import { useState, memo } from "react"
+import { motion } from "framer-motion"
+import styled, { css } from "styled-components"
 
-import { Box } from "components/box";
+import { Box } from "components/box"
 
 const MotionBox = styled(motion.div)`
   width: 18px;
   height: 18px;
   background-color: white;
   border-radius: 40px;
-`;
+`
 
 const SwitchBox = styled(Box)<{ isOn: boolean }>`
   ${props =>
@@ -29,10 +29,10 @@ const SwitchBox = styled(Box)<{ isOn: boolean }>`
   border-radius: 50px;
   padding: 4px;
   cursor: pointer;
-`;
+`
 
 export const Switch = memo(() => {
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState(false)
 
   return (
     <SwitchBox isOn={toggle} onClick={() => setToggle(state => !state)}>
@@ -45,5 +45,5 @@ export const Switch = memo(() => {
         }}
       />
     </SwitchBox>
-  );
-});
+  )
+})
