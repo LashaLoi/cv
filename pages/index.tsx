@@ -10,6 +10,8 @@ import { ThemeModeProvider } from "theme/context"
 import { useTheme } from "hooks/useTheme"
 import { useLocalStorage } from "hooks/useLocalStorage"
 
+// import { Box } from "components/box"
+
 const Main = () => {
   const { getItem, setItem } = useLocalStorage()
   const theme = useTheme()
@@ -19,6 +21,16 @@ const Main = () => {
 
     if (!getItem("mode")) setItem("mode", "dark")
   }, [])
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     console.log(1)
+  //   }
+
+  //   window.addEventListener("scroll", handleScroll)
+
+  //   return () => window.removeEventListener("scroll", handleScroll)
+  // })
 
   return (
     <ThemeProvider theme={theme}>

@@ -1,34 +1,30 @@
 import styled from "styled-components"
 
-import { Flex, Box } from "components/box"
-import { H3 } from "components/headers"
-import { Switch } from "components/switch"
-import { FadeIn } from "components/fade/in"
 import { TargetLink } from "components/link"
+import { FadeIn } from "components/fade/in"
+import { Switch } from "components/switch"
+import { Flex, Box } from "components/box"
 
 import { useTheme } from "hooks/useTheme"
 
 import GithubIcon from "./icons/github.svg"
 import TwitterIcon from "./icons/twitter.svg"
 import LinkedInIcon from "./icons/linkedin.svg"
+import Logo from "./icons/logo.svg"
 
 const HeaderContainer = styled(Flex).attrs({
   justifyContent: "space-between",
-
   alignItems: "center",
   bg: "secondary",
   py: 5
 })`
   color: white;
+  padding-left: ${props => props.theme.space[9]};
+  padding-right: ${props => props.theme.space[9]};
 
   @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
     padding-left: ${props => props.theme.space[5]};
     padding-right: ${props => props.theme.space[5]};
-  }
-
-  @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
-    padding-left: ${props => props.theme.space[9]};
-    padding-right: ${props => props.theme.space[9]};
   }
 `
 
@@ -55,7 +51,9 @@ export const Header = () => {
   return (
     <HeaderContainer height={theme.space[7]}>
       <FadeIn>
-        <H3>AL</H3>
+        <IconContainer>
+          <Logo />
+        </IconContainer>
       </FadeIn>
       <Flex mt={1}>
         <FadeIn delayMs={0.2}>
