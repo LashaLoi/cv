@@ -6,8 +6,7 @@ import { Flex, Box } from "components/box"
 import { FadeIn } from "components/fade/in"
 import { motion } from "framer-motion"
 import { Text } from "components/text"
-// import { isServer } from "lib/isServer"
-// import { useHeight } from "hooks/useHeight"
+
 import { useThemeModeContext } from "theme/context"
 
 const MainPhoto = styled.img`
@@ -51,6 +50,7 @@ const Grid = styled(_Grid)`
 
 const Name = styled(Text)`
   font-size: 40px;
+  color: white;
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
     font-size: 30px;
@@ -59,6 +59,7 @@ const Name = styled(Text)`
 
 const Desc = styled(Text)`
   font-size: 30px;
+  color: white;
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
     font-size: 20px;
@@ -94,8 +95,6 @@ const HomeBg = styled(Box)<{ darkMode: boolean }>`
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  color: white;
 `
 
 export const Home: React.FC = ({}) => {
