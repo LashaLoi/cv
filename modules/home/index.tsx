@@ -1,3 +1,4 @@
+import React from "react"
 import styled from "styled-components"
 
 import { Grid as _Grid, Col } from "components/grid"
@@ -5,6 +6,9 @@ import { Flex, Box } from "components/box"
 import { FadeIn } from "components/fade/in"
 import { motion } from "framer-motion"
 import { Text } from "components/text"
+// import { isServer } from "lib/isServer"
+// import { useHeight } from "hooks/useHeight"
+import { useThemeModeContext } from "theme/context"
 
 const MainPhoto = styled.img`
   @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
@@ -17,12 +21,11 @@ const MainPhoto = styled.img`
 
   border-radius: 50%;
 
-  border: 5px solid ${props => props.theme.colors.font};
+  border: 5px solid white;
 `
 
 const HomeContainer = styled(Flex)`
   flex-direction: column;
-  /* align-items: flex-start; */
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
     margin-left: ${props => props.theme.space[0]};
@@ -36,11 +39,13 @@ const HomeContainer = styled(Flex)`
 
 const Grid = styled(_Grid)`
   @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
-    margin-top: ${props => props.theme.space[9]};
+    padding-top: ${props => props.theme.space[9]};
+    padding-bottom: ${props => props.theme.space[9]};
   }
 
   @media screen and (max-width: ${props => props.theme.breakpoints.md}px) {
-    margin-top: ${props => props.theme.space[7]};
+    padding-top: ${props => props.theme.space[7]};
+    padding-bottom: ${props => props.theme.space[9]};
   }
 `
 
@@ -84,29 +89,44 @@ const NestedFlex = styled(Flex)`
   }
 `
 
-export const Home = () => (
-  <Grid>
-    <Col cols={[4, 4, 12, 12]}>
-      <FadeIn>
-        <HomeContainer>
-          <MainFlex alignItems="center">
-            <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
-            <NestedFlex ml={7} flexDirection="column" my={7}>
-              <FadeIn delayMs={0.2}>
-                <Name bold>Aliaksei Loi</Name>
-              </FadeIn>
-              <FadeIn delayMs={0.3}>
-                <Desc mt={4} width="110%">
-                  Frontend Software Engineer
-                </Desc>
-              </FadeIn>
-              <Box mt={4}>
-                <Line animate={{ width: "90%" }} transition={{ delay: 0.6 }} />
-              </Box>
-            </NestedFlex>
-          </MainFlex>
-        </HomeContainer>
-      </FadeIn>
-    </Col>
-  </Grid>
-)
+const HomeBg = styled(Box)<{ darkMode: boolean }>`
+  background: url(/assets/images/main-bg-dark.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  color: white;
+`
+
+export const Home: React.FC = ({}) => {
+  const { darkMode } = useThemeModeContext()
+
+  return (
+    <HomeBg darkMode={darkMode}>
+      <Grid>
+        <Col cols={[4, 4, 12, 12]}>
+          <FadeIn>
+            <HomeContainer>
+              <MainFlex alignItems="center">
+                <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
+                <NestedFlex ml={7} flexDirection="column" my={7}>
+                  <FadeIn delayMs={0.2}>
+                    <Name bold>Aliaksei Loi</Name>
+                  </FadeIn>
+                  <FadeIn delayMs={0.3}>
+                    <Desc mt={4} width="110%">
+                      Frontend Software Engineer
+                    </Desc>
+                  </FadeIn>
+                  <Box mt={4}>
+                    <Line animate={{ width: "90%" }} transition={{ delay: 0.6 }} />
+                  </Box>
+                </NestedFlex>
+              </MainFlex>
+            </HomeContainer>
+          </FadeIn>
+        </Col>
+      </Grid>
+    </HomeBg>
+  )
+}
