@@ -16,9 +16,8 @@ const Main = () => {
 
   useEffect(() => {
     document.documentElement.lang = "en"
-    const item = getItem("mode")
 
-    if (!item) setItem("mode", "dark")
+    if (!getItem("mode")) setItem("mode", "dark")
   }, [])
 
   return (

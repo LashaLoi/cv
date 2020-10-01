@@ -22,7 +22,7 @@ const MainPhoto = styled.img`
 
 const HomeContainer = styled(Flex)`
   flex-direction: column;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
     margin-left: ${props => props.theme.space[0]};
