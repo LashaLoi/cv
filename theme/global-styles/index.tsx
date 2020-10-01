@@ -44,6 +44,7 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     padding: 0;
     font-family: "Roboto", sans-serif;
 
+    color: ${props => props.theme.colors.font};
     background-color: ${props => props.theme.colors.primary};
     min-width: 375px; /* We lock at 375 min and zoom viewport to fit for smaller devices */
   }
