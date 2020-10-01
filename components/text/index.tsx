@@ -3,7 +3,7 @@ import { display, verticalAlign } from "styled-system"
 
 import { BoxProps } from "components/box"
 
-import { FontConfigurations, textDecoration, textTransform, typography, TypographyProps, whiteSpace } from "theme"
+import { textDecoration, textTransform, typography, TypographyProps, whiteSpace } from "theme"
 
 export type TextProps = {
   children?: React.ReactNode
@@ -32,33 +32,3 @@ export const Text = styled.p<TextProps>`
   ${props => (props.strikethrough ? "text-decoration: line-through;" : "")}
   ${props => (props.upperCase ? "text-transform: uppercase;" : "")}
 `
-
-export const Paragraph: React.FunctionComponent<TextProps> = ({ children, ...props }) => (
-  <Text {...FontConfigurations.p} {...props}>
-    {children}
-  </Text>
-)
-
-export const ParagraphLarge: React.FunctionComponent<TextProps> = ({ children, ...props }) => (
-  <Text {...FontConfigurations.pLg} {...props}>
-    {children}
-  </Text>
-)
-
-export const ParagraphSmall: React.FunctionComponent<TextProps> = ({ children, ...props }) => (
-  <Text {...FontConfigurations.pSm} {...props}>
-    {children}
-  </Text>
-)
-
-export const Eyebrow: React.FunctionComponent<TextProps> = ({ children, as = "label", ...props }) => (
-  <Text as={as} {...FontConfigurations.eyebrow} {...props}>
-    {children}
-  </Text>
-)
-
-export const EyebrowSmall: React.FunctionComponent<TextProps> = ({ children, as = "label", ...props }) => (
-  <Text as={as} {...FontConfigurations.eyebrowSm} {...props}>
-    {children}
-  </Text>
-)

@@ -4,6 +4,7 @@ import { Grid as _Grid, Col } from "components/grid"
 import { Flex, Box } from "components/box"
 import { FadeIn } from "components/fade/in"
 import { motion } from "framer-motion"
+import { Text } from "components/text"
 
 const MainPhoto = styled.img`
   @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
@@ -43,7 +44,7 @@ const Grid = styled(_Grid)`
   }
 `
 
-const Name = styled(Box)`
+const Name = styled(Text)`
   font-size: 40px;
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
@@ -51,7 +52,7 @@ const Name = styled(Box)`
   }
 `
 
-const Desc = styled(Box)`
+const Desc = styled(Text)`
   font-size: 30px;
 
   @media screen and (max-width: ${props => props.theme.breakpoints.sm}px) {
@@ -92,17 +93,16 @@ export const Home = () => (
             <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
             <NestedFlex ml={7} flexDirection="column" my={7}>
               <FadeIn delayMs={0.2}>
-                <Name as="p">Aliaksei Loi</Name>
+                <Name bold>Aliaksei Loi</Name>
               </FadeIn>
               <FadeIn delayMs={0.3}>
                 <Desc mt={4} width="110%">
                   Frontend Software Engineer
                 </Desc>
-
-                <Box mt={4}>
-                  <Line animate={{ width: "105%" }} transition={{ delay: 0.6 }} />
-                </Box>
               </FadeIn>
+              <Box mt={4}>
+                <Line animate={{ width: "90%" }} transition={{ delay: 0.6 }} />
+              </Box>
             </NestedFlex>
           </MainFlex>
         </HomeContainer>

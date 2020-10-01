@@ -1,4 +1,7 @@
+import Head from "next/head"
+
 import { useEffect } from "react"
+
 import { GlobalStyles } from "theme/global-styles"
 import { Root } from "modules/root"
 import { ThemeProvider } from "styled-components"
@@ -12,6 +15,7 @@ const Main = () => {
   const theme = useTheme()
 
   useEffect(() => {
+    document.documentElement.lang = "en"
     const item = getItem("mode")
 
     if (!item) setItem("mode", "dark")
@@ -27,6 +31,10 @@ const Main = () => {
 
 const IndexPage = () => (
   <ThemeModeProvider>
+    <Head>
+      <title>aliasksei.loi.cv</title>
+      <meta charSet="utf-8" />
+    </Head>
     <Main />
   </ThemeModeProvider>
 )
