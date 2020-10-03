@@ -2,11 +2,13 @@ import React from "react"
 import styled from "styled-components"
 
 import { useHeight } from "hooks/useHeight"
-import { useTheme } from "hooks/useTheme"
+import { theme } from "theme"
 
 import { Header } from "modules/header"
 
 import { Box, Flex } from "components/box"
+
+import { getColorByThemeMode } from "lib/getColorByThemeMode"
 
 const NavHeader = styled(Box)`
   position: fixed;
@@ -18,11 +20,12 @@ const Container = styled(Flex)`
   justify-content: stretch;
   flex-direction: column;
   overflow-x: hidden;
+
+  background: ${() => getColorByThemeMode("primary")};
 `
 
 export const Layout: React.FC = ({ children }) => {
   const { headerRef, headerHeight } = useHeight()
-  const theme = useTheme()
 
   return (
     <Container>

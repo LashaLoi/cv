@@ -87,7 +87,7 @@ const NestedFlex = styled(Flex)`
 `
 
 export const Home = () => (
-  <Parallax blur={4} bgImage="/assets/images/main-bg-dark.jpg" bgImageAlt="header bg" strength={300}>
+  <Parallax bgImage="/assets/images/main-bg-dark.jpg" bgImageAlt="header bg" strength={300}>
     <Grid>
       <Col cols={[4, 4, 12, 12]}>
         <FadeIn>

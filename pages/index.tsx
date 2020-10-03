@@ -6,12 +6,11 @@ import { Root } from "modules/root"
 import { ThemeProvider } from "styled-components"
 
 import { ThemeModeProvider } from "theme/context"
-import { useTheme } from "hooks/useTheme"
+import { theme } from "theme"
 import { useLocalStorage } from "hooks/useLocalStorage"
 
 const Main = () => {
   const { getItem, setItem } = useLocalStorage()
-  const theme = useTheme()
 
   useEffect(() => {
     if (!getItem("mode")) setItem("mode", "dark")

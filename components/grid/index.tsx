@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { Box, Flex, BoxProps, FlexContainerProps, FlexItemProps } from "components/box"
 
-import { useTheme } from "hooks/useTheme"
+import { theme } from "theme"
 
 type GridProps = {
   rowProps?: {}
@@ -26,28 +26,28 @@ const prioritizedPadding = ({ p, px, pr, pl, paddingRight, paddingLeft }: ColPro
   const paddingRightResponsive = Array.isArray(right) ? right : [right]
 
   return `
-    ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[0], useTheme().space[5])}
-    ${prioritizedPaddingCss("padding-right", paddingRightResponsive[0], useTheme().space[5])}
+    ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[0], theme.space[5])}
+    ${prioritizedPaddingCss("padding-right", paddingRightResponsive[0], theme.space[5])}
 
-    @media screen and (min-width: ${useTheme().breakpoints.sm}px) {
-      ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[1], useTheme().space[6])}
-      ${prioritizedPaddingCss("padding-right", paddingRightResponsive[1], useTheme().space[6])}
+    @media screen and (min-width: ${theme.breakpoints.sm}px) {
+      ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[1], theme.space[6])}
+      ${prioritizedPaddingCss("padding-right", paddingRightResponsive[1], theme.space[6])}
     }
 
-    @media screen and (min-width: ${useTheme().breakpoints.md}px) {
-      ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[2], useTheme().space[7])}
-      ${prioritizedPaddingCss("padding-right", paddingRightResponsive[2], useTheme().space[7])}
+    @media screen and (min-width: ${theme.breakpoints.md}px) {
+      ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[2], theme.space[7])}
+      ${prioritizedPaddingCss("padding-right", paddingRightResponsive[2], theme.space[7])}
     }
 
-    @media screen and (min-width: ${useTheme().breakpoints.lg}px) {
-      ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[3], useTheme().space[8])}
-      ${prioritizedPaddingCss("padding-right", paddingRightResponsive[3], useTheme().space[8])}
+    @media screen and (min-width: ${theme.breakpoints.lg}px) {
+      ${prioritizedPaddingCss("padding-left", paddingLeftResponsive[3], theme.space[8])}
+      ${prioritizedPaddingCss("padding-right", paddingRightResponsive[3], theme.space[8])}
   `
 }
 
 const prioritizedPaddingCss = (direction: "padding-left" | "padding-right", setSpaceIndex: any, defaultSpace: string) =>
   setSpaceIndex != undefined && !isNaN(parseInt(setSpaceIndex))
-    ? `${direction}: ${useTheme().space[setSpaceIndex]};`
+    ? `${direction}: ${theme.space[setSpaceIndex]};`
     : `${direction}: ${defaultSpace};`
 
 // Default padding is <Col px={['0.75rem', '0.75rem', '1.125rem', '1.125rem']} />
