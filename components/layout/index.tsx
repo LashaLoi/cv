@@ -1,6 +1,5 @@
-// import React, { useEffect } from "react"
-import styled from "styled-components"
 import React from "react"
+import styled from "styled-components"
 
 import { useHeight } from "hooks/useHeight"
 import { useTheme } from "hooks/useTheme"
@@ -8,7 +7,6 @@ import { useTheme } from "hooks/useTheme"
 import { Header } from "modules/header"
 
 import { Box, Flex } from "components/box"
-// import { useStoreContext } from "store"
 
 const NavHeader = styled(Box)`
   position: fixed;
@@ -23,16 +21,8 @@ const Container = styled(Flex)`
 `
 
 export const Layout: React.FC = ({ children }) => {
-  // const { setOffset } = useStoreContext()
   const { headerRef, headerHeight } = useHeight()
   const theme = useTheme()
-
-  // useEffect(() => {
-  //   const handleScroll = () => setOffset(window.pageYOffset)
-
-  //   window?.addEventListener("scroll", handleScroll)
-  //   return () => window?.removeEventListener("scroll", handleScroll)
-  // }, [])
 
   return (
     <Container>
