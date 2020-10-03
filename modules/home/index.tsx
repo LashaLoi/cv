@@ -1,3 +1,5 @@
+// import { useEffect } from "react"
+
 import styled from "styled-components"
 import { motion } from "framer-motion"
 
@@ -5,6 +7,7 @@ import { Grid as _Grid, Col } from "components/grid"
 import { Flex, Box } from "components/box"
 import { FadeIn } from "components/fade/in"
 import { Text } from "components/text"
+// import { useStoreContext } from "store"
 
 const MainPhoto = styled.img`
   @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
@@ -94,31 +97,37 @@ const HomeBg = styled(Box)`
   color: white;
 `
 
-export const Home = () => (
-  <HomeBg>
-    <Grid>
-      <Col cols={[4, 4, 12, 12]}>
-        <FadeIn>
-          <HomeContainer>
-            <MainFlex alignItems="center">
-              <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
-              <NestedFlex ml={7} flexDirection="column" my={7}>
-                <FadeIn delayMs={0.2}>
-                  <Name bold>Aliaksei Loi</Name>
-                </FadeIn>
-                <FadeIn delayMs={0.3}>
-                  <Desc mt={4} width="110%">
-                    Frontend Software Engineer
-                  </Desc>
-                </FadeIn>
-                <Box mt={4}>
-                  <Line animate={{ width: "90%" }} transition={{ delay: 0.6 }} />
-                </Box>
-              </NestedFlex>
-            </MainFlex>
-          </HomeContainer>
-        </FadeIn>
-      </Col>
-    </Grid>
-  </HomeBg>
-)
+export const Home = () => {
+  // const { offset } = useStoreContext()
+
+  // console.log({ offset })
+
+  return (
+    <HomeBg>
+      <Grid>
+        <Col cols={[4, 4, 12, 12]}>
+          <FadeIn>
+            <HomeContainer>
+              <MainFlex alignItems="center">
+                <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
+                <NestedFlex ml={7} flexDirection="column" my={7}>
+                  <FadeIn delayMs={0.2}>
+                    <Name bold>Aliaksei Loi</Name>
+                  </FadeIn>
+                  <FadeIn delayMs={0.3}>
+                    <Desc mt={4} width="110%">
+                      Frontend Software Engineer
+                    </Desc>
+                  </FadeIn>
+                  <Box mt={4}>
+                    <Line animate={{ width: "90%" }} transition={{ delay: 0.6 }} />
+                  </Box>
+                </NestedFlex>
+              </MainFlex>
+            </HomeContainer>
+          </FadeIn>
+        </Col>
+      </Grid>
+    </HomeBg>
+  )
+}

@@ -10,7 +10,7 @@ import { ThemeModeProvider } from "theme/context"
 import { useTheme } from "hooks/useTheme"
 import { useLocalStorage } from "hooks/useLocalStorage"
 
-// import { Box } from "components/box"
+import { StoreContextProvider } from "store"
 
 const Main = () => {
   const { getItem, setItem } = useLocalStorage()
@@ -22,16 +22,6 @@ const Main = () => {
     if (!getItem("mode")) setItem("mode", "dark")
   }, [])
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     console.log(1)
-  //   }
-
-  //   window.addEventListener("scroll", handleScroll)
-
-  //   return () => window.removeEventListener("scroll", handleScroll)
-  // })
-
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -42,11 +32,15 @@ const Main = () => {
 
 const IndexPage = () => (
   <ThemeModeProvider>
-    <Head>
-      <title>aliasksei.loi.cv</title>
-      <meta charSet="utf-8" />
-    </Head>
-    <Main />
+    <StoreContextProvider>
+      <Head>
+        <title>aliaksei.loi.cv</title>
+        <meta charSet="utf-8" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/apple-touch-icon.jpg"></link>
+        <link rel="icon" type="image/x-icon" sizes="32x32" href="/assets/favicon.ico"></link>
+      </Head>
+      <Main />
+    </StoreContextProvider>
   </ThemeModeProvider>
 )
 
