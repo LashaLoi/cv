@@ -1,7 +1,7 @@
 import CSS from "csstype"
 
 import { fonts, Fonts } from "./typography"
-import { darkColors, lightColors, Palette } from "./colors"
+import { colors, Palette } from "./colors"
 
 export * from "./colors"
 export * from "./typography"
@@ -41,8 +41,8 @@ export type Theme = {
   maxWidths: number[]
 }
 
-export const theme = (isDarkMode: boolean): Theme => ({
-  colors: isDarkMode ? darkColors : lightColors,
+export const theme: Theme = {
+  colors,
   fonts,
   layers: {
     default: 0,
@@ -71,6 +71,6 @@ export const theme = (isDarkMode: boolean): Theme => ({
   ],
   reducedOpacity: 0.75,
   maxWidths: [320, 433, 947, 1219, 1439]
-})
+}
 
-export default theme(true)
+export default theme

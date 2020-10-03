@@ -10,7 +10,7 @@ import { useLocalStorage } from "hooks/useLocalStorage"
 const MotionBox = styled(motion.div)`
   width: 18px;
   height: 18px;
-  background-color: ${props => props.theme.colors.primary};
+  background-color: ${props => props.theme.colors.primaryDark};
   border-radius: 40px;
 `
 
