@@ -15,7 +15,7 @@ import Logo from "./icons/logo.svg"
 const HeaderContainer = styled(Flex).attrs({
   justifyContent: "space-between",
   alignItems: "center",
-  bg: "secondary",
+  bg: "secondaryDark",
   py: 5
 })`
   color: white;

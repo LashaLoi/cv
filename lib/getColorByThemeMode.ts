@@ -2,7 +2,7 @@ import { useThemeModeContext } from "theme/context"
 import { Color } from "theme/colors"
 import { theme } from "theme"
 
-export const getColorByThemeMode = (colorKey: string, reverse = false) => {
+export const getColorByThemeMode = (colorKey: Color, reverse = false) => {
   const { darkMode } = useThemeModeContext()
 
   const mode = reverse ? !darkMode : darkMode

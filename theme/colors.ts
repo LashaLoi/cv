@@ -1,4 +1,14 @@
-export type Color = "font" | "primary" | "secondary" | "grey" | "pink" | "fontDark" | "primaryDark" | "secondaryDark"
+export type Color =
+  | "font"
+  | "primary"
+  | "secondary"
+  | "grey"
+  | "pink"
+  | "fontDark"
+  | "primaryDark"
+  | "secondaryDark"
+  | "white"
+
 export type Palette = Record<Color, string>
 
 export const colors: Palette = {
@@ -8,8 +18,10 @@ export const colors: Palette = {
 
   font: "#000000",
   primary: "#ffffff",
-  secondary: "#1a1e3b",
+  secondary: "#08132a",
 
   grey: "#a8a8a8",
-  pink: "#eb598e"
+  pink: "#eb598e",
+
+  white: "#ffffff"
 }
