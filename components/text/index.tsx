@@ -3,7 +3,7 @@ import { display, verticalAlign } from "styled-system"
 
 import { BoxProps } from "components/box"
 
-import { textDecoration, textTransform, typography, TypographyProps, whiteSpace } from "theme"
+import { textDecoration, textTransform, whiteSpace } from "theme/custom-system-types"
 
 export type TextProps = {
   children?: React.ReactNode
@@ -16,11 +16,9 @@ export type TextProps = {
   dangerouslySetInnerHTML?: {
     __html: string
   }
-} & BoxProps &
-  TypographyProps
+} & BoxProps
 
 export const Text = styled.p<TextProps>`
-  ${typography}
   ${display}
   ${textTransform}
   ${textDecoration}

@@ -1,10 +1,8 @@
 import CSS from "csstype"
 
-import { fonts, Fonts } from "./typography"
 import { colors, Palette } from "./colors"
 
 export * from "./colors"
-export * from "./typography"
 
 export type ColorProps = {
   color?: CSS.Property.Color
@@ -35,7 +33,6 @@ export type Theme = {
   layers: Record<Layers, number>
   breakpoints: BreakpointsArray
   colors: Palette
-  fonts: Fonts
   space: string[]
   reducedOpacity: number
   maxWidths: number[]
@@ -43,7 +40,6 @@ export type Theme = {
 
 export const theme: Theme = {
   colors,
-  fonts,
   layers: {
     default: 0,
     middle: 1,

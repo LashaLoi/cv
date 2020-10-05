@@ -9,6 +9,8 @@ import { ThemeModeProvider } from "theme/context"
 import { theme } from "theme"
 import { useLocalStorage } from "hooks/useLocalStorage"
 
+import { MotionProvider } from "lib/motion-config"
+
 const Main = () => {
   const { getItem, setItem } = useLocalStorage()
 
@@ -17,10 +19,12 @@ const Main = () => {
   }, [])
 
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Root />
-    </ThemeProvider>
+    <MotionProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Root />
+      </ThemeProvider>
+    </MotionProvider>
   )
 }
 

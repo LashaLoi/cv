@@ -1,11 +1,13 @@
-import { theme } from "theme"
 import { useThemeModeContext } from "theme/context"
 import { Color } from "theme/colors"
+import { theme } from "theme"
 
-export const getColorByThemeMode = (colorKey: string) => {
+export const getColorByThemeMode = (colorKey: string, reverse = false) => {
   const { darkMode } = useThemeModeContext()
 
-  const key = darkMode ? `${colorKey}Dark` : colorKey
+  const mode = reverse ? !darkMode : darkMode
+
+  const key = mode ? `${colorKey}Dark` : colorKey
 
   return theme.colors[key as Color]
 }
