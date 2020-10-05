@@ -18,7 +18,7 @@ const Item = styled(Text)`
 `
 
 export const Skills = () => (
-  <Grid mt={7} rowProps={{ alignItems: "flex-start" }}>
+  <Grid my={7} rowProps={{ alignItems: "flex-start" }} overflow="hidden">
     <Col mt={6} cols={[4, 4, 6, 4]}>
       <motion.div
         initial="hidden"

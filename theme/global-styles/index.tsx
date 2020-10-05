@@ -43,7 +43,6 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-    height: 100vh;
     color: white;
 
     min-width: 375px; /* We lock at 375 min and zoom viewport to fit for smaller devices */
@@ -51,11 +50,5 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
 
   html {
     box-sizing: border-box;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
   }
 `
