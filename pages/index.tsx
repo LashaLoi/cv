@@ -10,7 +10,7 @@ import { GlobalStyles } from "theme/global-styles"
 
 import { MotionProvider } from "lib/motion-config"
 
-import { ThemeModeProvider } from "theme/context"
+import { ThemeModeProvider } from "context/theme-mode"
 import { theme } from "theme"
 
 const Main = () => {

@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import ProgressiveImage from "react-progressive-image"
 
 import { Flex, Box } from "components/box"
 
@@ -34,13 +35,18 @@ const Line = styled(Box)`
 `
 
 type CardProps = {
-  imgUrl?: string
+  imgUrl: {
+    normal: string
+    small: string
+  }
   imgAlt?: string
 }
 
 export const Card: React.FC<CardProps> = ({ imgUrl, imgAlt, children }) => (
   <CardContainer mx={4}>
-    <CardIconContainer src={imgUrl} alt={imgAlt} />
+    <ProgressiveImage src={imgUrl.normal} placeholder={imgUrl.small}>
+      {(src: string) => <CardIconContainer src={src} alt={imgAlt} />}
+    </ProgressiveImage>
     <CardBody p={5}>{children}</CardBody>
     <Line />
   </CardContainer>

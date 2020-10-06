@@ -3,7 +3,7 @@ import { m as motion } from "framer-motion"
 import styled from "styled-components"
 
 import { useLocalStorage } from "hooks/useLocalStorage"
-import { useThemeModeContext } from "theme/context"
+import { useThemeModeContext } from "context/theme-mode"
 
 import { Box } from "components/box"
 

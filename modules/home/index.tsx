@@ -1,4 +1,5 @@
-import { Parallax } from "react-parallax"
+import { Parallax, Background } from "react-parallax"
+import ProgressiveImage from "react-progressive-image"
 
 import { FadeIn } from "components/fade/in"
 import { Col } from "components/grid"
@@ -7,13 +8,20 @@ import { Box } from "components/box"
 import { Grid, HomeContainer, MainFlex, MainPhoto, Name, Desc, NestedFlex, Line } from "./components"
 
 export const Home = () => (
-  <Parallax bgImage={`/assets/images/main-bg-dark.jpg`} bgImageAlt="header bg" strength={300}>
+  <Parallax strength={300}>
+    <Background>
+      <ProgressiveImage src="/assets/images/main-bg-dark.jpg" placeholder="/assets/images/main-bg-dark-min.jpg">
+        {(src: string) => <img src={src} alt="header bg" />}
+      </ProgressiveImage>
+    </Background>
     <Grid>
       <Col cols={[4, 4, 12, 12]}>
         <FadeIn>
           <HomeContainer>
             <MainFlex alignItems="center">
-              <MainPhoto src="/assets/images/main-photo.jpg" alt="main-photo" />
+              <ProgressiveImage src="/assets/images/main-photo.jpg" placeholder="/assets/images/main-photo-min.jpg">
+                {(src: string) => <MainPhoto src={src} alt="main-photo" />}
+              </ProgressiveImage>
               <NestedFlex ml={7} flexDirection="column" my={7}>
                 <FadeIn delayMs={0.2}>
                   <Name bold>Aliaksei Loi</Name>

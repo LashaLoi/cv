@@ -7,10 +7,6 @@ import { Text } from "components/text"
 import { Card } from "./components/card"
 import { Items } from "./components/items"
 
-import reactUrl from "./images/react.png"
-import vueUrl from "./images/vue.png"
-import jsUrl from "./images/js.png"
-
 const Item = styled(Text)`
   font-size: 20px;
   margin-bottom: ${props => props.theme.space[3]};
@@ -36,7 +32,7 @@ export const Skills = () => (
           }
         }}
       >
-        <Card imgUrl={reactUrl} imgAlt="react">
+        <Card imgUrl={{ normal: "/assets/images/react.png", small: "/assets/images/react-min.png" }} imgAlt="react">
           <Items>
             <Item>- v16.13.1</Item>
             <Item>- Fiber</Item>
@@ -76,7 +72,7 @@ export const Skills = () => (
           }
         }}
       >
-        <Card imgUrl={vueUrl} imgAlt="vue">
+        <Card imgUrl={{ normal: "/assets/images/vue.png", small: "/assets/images/vue-min.png" }} imgAlt="vue">
           <Items>
             <Item>- v2</Item>
             <Item>- Vuex</Item>
@@ -106,7 +102,7 @@ export const Skills = () => (
           }
         }}
       >
-        <Card imgUrl={jsUrl} imgAlt="js">
+        <Card imgUrl={{ normal: "/assets/images/js.png", small: "/assets/images/js-min.png" }} imgAlt="js">
           <Items>
             <Item>- ES6-11</Item>
             <Item>- Jest</Item>
