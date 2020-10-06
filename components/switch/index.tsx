@@ -2,10 +2,10 @@ import { memo } from "react"
 import { m as motion } from "framer-motion"
 import styled from "styled-components"
 
+import { useLocalStorage } from "hooks/useLocalStorage"
 import { useThemeModeContext } from "theme/context"
 
 import { Box } from "components/box"
-import { useLocalStorage } from "hooks/useLocalStorage"
 
 const MotionBox = styled(motion.div)`
   width: 18px;
@@ -14,7 +14,9 @@ const MotionBox = styled(motion.div)`
   border-radius: 40px;
 `
 
-const SwitchBox = styled(Box)<{ isOn: boolean; darkMode: boolean }>`
+type SwitchBoxProps = { isOn: boolean; darkMode: boolean }
+
+const SwitchBox = styled(Box)<SwitchBoxProps>`
   justify-content: ${props => (props.isOn ? "flex-end" : "flex-start")};
   background-color: ${props => (props.darkMode ? "white" : "#536390")};
 

@@ -1,15 +1,17 @@
 import { useEffect } from "react"
+import { ThemeProvider } from "styled-components"
 import { Helmet } from "react-helmet"
 
-import { GlobalStyles } from "theme/global-styles"
 import { Root } from "modules/root"
-import { ThemeProvider } from "styled-components"
+
+import { useLocalStorage } from "hooks/useLocalStorage"
+
+import { GlobalStyles } from "theme/global-styles"
+
+import { MotionProvider } from "lib/motion-config"
 
 import { ThemeModeProvider } from "theme/context"
 import { theme } from "theme"
-import { useLocalStorage } from "hooks/useLocalStorage"
-
-import { MotionProvider } from "lib/motion-config"
 
 const Main = () => {
   const { getItem, setItem } = useLocalStorage()

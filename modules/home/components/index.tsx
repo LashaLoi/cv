@@ -3,7 +3,6 @@ import { m as motion } from "framer-motion"
 
 import { Grid as _Grid } from "components/grid"
 import { Flex } from "components/box"
-
 import { Text } from "components/text"
 
 import { getColorByThemeMode } from "lib/getColorByThemeMode"

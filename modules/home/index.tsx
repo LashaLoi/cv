@@ -1,8 +1,8 @@
 import { Parallax } from "react-parallax"
 
+import { FadeIn } from "components/fade/in"
 import { Col } from "components/grid"
 import { Box } from "components/box"
-import { FadeIn } from "components/fade/in"
 
 import { Grid, HomeContainer, MainFlex, MainPhoto, Name, Desc, NestedFlex, Line } from "./components"
 

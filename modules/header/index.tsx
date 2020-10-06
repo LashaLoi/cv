@@ -1,15 +1,16 @@
+import { memo } from "react"
 import styled from "styled-components"
 
 import { TargetLink } from "components/link"
 import { FadeIn } from "components/fade/in"
-import { Switch } from "components/switch"
 import { Flex, Box } from "components/box"
+import { Switch } from "components/switch"
 
 import { theme } from "theme"
 
-import GithubIcon from "./icons/github.svg"
-import TwitterIcon from "./icons/twitter.svg"
 import LinkedInIcon from "./icons/linkedin.svg"
+import TwitterIcon from "./icons/twitter.svg"
+import GithubIcon from "./icons/github.svg"
 import Logo from "./icons/logo.svg"
 
 const HeaderContainer = styled(Flex).attrs({
@@ -45,7 +46,7 @@ const IconContainer = styled(Box)`
   }
 `
 
-export const Header = () => (
+export const Header = memo(() => (
   <HeaderContainer height={theme.space[7]}>
     <FadeIn>
       <IconContainer>
@@ -81,4 +82,4 @@ export const Header = () => (
       </FadeIn>
     </Flex>
   </HeaderContainer>
-)
+))

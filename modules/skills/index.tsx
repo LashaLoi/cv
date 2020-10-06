@@ -2,11 +2,10 @@ import styled from "styled-components"
 import { m as motion } from "framer-motion"
 
 import { Grid, Col } from "components/grid"
+import { Text } from "components/text"
 
 import { Card } from "./components/card"
 import { Items } from "./components/items"
-
-import { Text } from "components/text"
 
 import reactUrl from "./images/react.png"
 import vueUrl from "./images/vue.png"
