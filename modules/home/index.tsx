@@ -1,9 +1,9 @@
 import { Parallax, Background } from "react-parallax"
 import ProgressiveImage from "react-progressive-image"
 
-import { FadeIn } from "components/fade/in"
-import { Col } from "components/grid"
-import { Box } from "components/box"
+import { FadeIn } from "lib/components/fade/in"
+import { Col } from "lib/components/grid"
+import { Box } from "lib/components/box"
 
 import { Grid, HomeContainer, MainFlex, MainPhoto, Name, Desc, NestedFlex, Line } from "./components"
 

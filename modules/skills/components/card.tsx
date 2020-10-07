@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import ProgressiveImage from "react-progressive-image"
 
-import { Flex, Box } from "components/box"
+import { Flex, Box } from "lib/components/box"
 
 import { getColorByThemeMode } from "lib/getColorByThemeMode"
 

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { display, verticalAlign } from "styled-system"
 
-import { BoxProps } from "components/box"
+import { BoxProps } from "lib/components/box"
 
 import { textDecoration, textTransform, whiteSpace } from "theme/custom-system-types"
 

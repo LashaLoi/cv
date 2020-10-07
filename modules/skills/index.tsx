@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
-import { SwipeUp } from "components/swipe/up"
-import { Grid, Col } from "components/grid"
-import { Text } from "components/text"
+import { SwipeUp } from "lib/components/swipe/up"
+import { Grid, Col } from "lib/components/grid"
+import { Text } from "lib/components/text"
 
 import { Card } from "./components/card"
 import { Items } from "./components/items"

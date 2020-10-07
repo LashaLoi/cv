@@ -1,4 +1,4 @@
-import { useThemeModeContext } from "context/theme-mode"
+import { useThemeModeContext } from "lib/context/theme-mode"
 import { Color } from "theme/colors"
 import { theme } from "theme"
 

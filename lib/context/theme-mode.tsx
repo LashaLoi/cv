@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 
-import { useLocalStorage } from "hooks/useLocalStorage"
+import { useLocalStorage } from "lib/hooks/useLocalStorage"
 
 export type Mode = "dark" | "light"
 

@@ -1,4 +1,4 @@
-import { Layout } from "components/layout"
+import { Layout } from "lib/components/layout"
 
 import { Home } from "modules/home"
 import { Skills } from "modules/skills"

@@ -2,9 +2,9 @@ import React from "react"
 
 import { Header } from "modules/header"
 
-import { Box, Flex } from "components/box"
+import { Box, Flex } from "lib/components/box"
 
-import { useHeight } from "hooks/useHeight"
+import { useHeight } from "lib/hooks/useHeight"
 
 import { getColorByThemeMode } from "lib/getColorByThemeMode"
 

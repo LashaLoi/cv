@@ -4,13 +4,13 @@ import { Helmet } from "react-helmet"
 
 import { Root } from "modules/root"
 
-import { useLocalStorage } from "hooks/useLocalStorage"
+import { useLocalStorage } from "lib/hooks/useLocalStorage"
 
 import { GlobalStyles } from "theme/global-styles"
 
 import { MotionProvider } from "lib/motion-config"
 
-import { ThemeModeProvider } from "context/theme-mode"
+import { ThemeModeProvider } from "lib/context/theme-mode"
 import { theme } from "theme"
 
 const Main = () => {

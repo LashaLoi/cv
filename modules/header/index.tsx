@@ -1,10 +1,10 @@
 import { memo } from "react"
 import styled from "styled-components"
 
-import { TargetLink } from "components/link"
-import { FadeIn } from "components/fade/in"
-import { Flex, Box } from "components/box"
-import { Switch } from "components/switch"
+import { TargetLink } from "lib/components/link"
+import { FadeIn } from "lib/components/fade/in"
+import { Flex, Box } from "lib/components/box"
+import { Switch } from "lib/components/switch"
 
 import { theme } from "theme"
 

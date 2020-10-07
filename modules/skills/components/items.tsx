@@ -2,7 +2,7 @@ import React, { useState, memo } from "react"
 import { m as motion } from "framer-motion"
 import styled from "styled-components"
 
-import { Flex } from "components/box"
+import { Flex } from "lib/components/box"
 
 import { getColorByThemeMode } from "lib/getColorByThemeMode"
 

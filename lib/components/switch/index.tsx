@@ -2,10 +2,10 @@ import { memo } from "react"
 import { m as motion } from "framer-motion"
 import styled from "styled-components"
 
-import { useLocalStorage } from "hooks/useLocalStorage"
-import { useThemeModeContext } from "context/theme-mode"
+import { useLocalStorage } from "lib/hooks/useLocalStorage"
+import { useThemeModeContext } from "lib/context/theme-mode"
 
-import { Box } from "components/box"
+import { Box } from "lib/components/box"
 
 const MotionBox = styled(motion.div)`
   width: 18px;

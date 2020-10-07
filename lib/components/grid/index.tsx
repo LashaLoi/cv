@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import { Box, Flex, BoxProps, FlexContainerProps, FlexItemProps } from "components/box"
+import { Box, Flex, BoxProps, FlexContainerProps, FlexItemProps } from "lib/components/box"
 
 import { theme } from "theme"
 
