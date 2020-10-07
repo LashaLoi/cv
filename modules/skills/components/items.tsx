@@ -4,21 +4,26 @@ import styled from "styled-components"
 
 import { Flex } from "components/box"
 
+import { getColorByThemeMode } from "lib/getColorByThemeMode"
+
 import Arrow from "../images/arrow.svg"
 
 const ItemsContainer = styled(motion.div)`
+  color: ${() => getColorByThemeMode("font")};
+
   height: 170px;
   overflow: hidden;
 `
 
-const SvgContainer = styled(Flex)`
+const SvgContainer = styled(Flex)<{ showMore: boolean }>`
   cursor: pointer;
-  transform: rotate(-90deg);
+
+  transform: rotate(${props => (props.showMore ? 90 : -90)}deg);
 
   svg {
     height: 25px;
 
-    fill: #fff;
+    fill: ${() => getColorByThemeMode("font")};
   }
 `
 
@@ -31,7 +36,7 @@ export const Items: React.FC = memo(({ children }) => {
   return (
     <>
       <ItemsContainer animate={{ height }}>{children}</ItemsContainer>
-      <SvgContainer mt={4} justifyContent="center" onClick={toggle}>
+      <SvgContainer mt={4} justifyContent="center" showMore={showMore} onClick={toggle}>
         <Arrow />
       </SvgContainer>
     </>

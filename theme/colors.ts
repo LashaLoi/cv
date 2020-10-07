@@ -18,7 +18,7 @@ export const colors: Palette = {
 
   font: "#000000",
   primary: "#ffffff",
-  secondary: "#08132a",
+  secondary: "#f6f8fa",
 
   grey: "#a8a8a8",
   pink: "#eb598e",
