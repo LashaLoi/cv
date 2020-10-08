@@ -5,9 +5,7 @@ import { Grid as _Grid } from "lib/components/grid"
 import { Flex } from "lib/components/box"
 import { Text } from "lib/components/text"
 
-import { getColorByThemeMode } from "lib/getColorByThemeMode"
-
-export const MainPhoto = styled.img`
+export const MainPhoto = styled(motion.img)`
   @media screen and (min-width: ${props => props.theme.breakpoints.md}px) {
     height: 300px;
   }
@@ -18,7 +16,7 @@ export const MainPhoto = styled.img`
 
   border-radius: 50%;
 
-  border: 5px solid ${() => getColorByThemeMode("primary", true)};
+  border: 5px solid;
 `
 
 export const HomeContainer = styled(Flex)`
