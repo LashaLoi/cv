@@ -6,6 +6,8 @@ import { FadeIn } from "lib/components/fade/in"
 import { Flex, Box } from "lib/components/box"
 import { Switch } from "lib/components/switch"
 
+import { isServer } from "lib/isServer"
+
 import { theme } from "theme"
 
 import LinkedInIcon from "./icons/linkedin.svg"
@@ -46,40 +48,52 @@ const IconContainer = styled(Box)`
   }
 `
 
-export const Header = memo(() => (
-  <HeaderContainer height={theme.space[7]}>
-    <FadeIn>
-      <IconContainer>
-        <Logo />
-      </IconContainer>
-    </FadeIn>
-    <Flex mt={1}>
-      <FadeIn delayMs={0.2}>
-        <TargetLink href="https://github.com/LashaLoi">
-          <IconContainer>
-            <GithubIcon />
-          </IconContainer>
-        </TargetLink>
+export const Header = memo(() => {
+  const handleScrollTop = () => {
+    if (isServer()) return
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth"
+    })
+  }
+
+  return (
+    <HeaderContainer height={theme.space[7]}>
+      <FadeIn>
+        <IconContainer onClick={handleScrollTop}>
+          <Logo />
+        </IconContainer>
       </FadeIn>
-      <FadeIn delayMs={0.3}>
-        <TargetLink href="https://twitter.com/sideswipeloi">
-          <IconContainer ml={5}>
-            <TwitterIcon />
-          </IconContainer>
-        </TargetLink>
-      </FadeIn>
-      <FadeIn delayMs={0.4}>
-        <TargetLink href="https://www.linkedin.com/in/alexey-loi-82b670185/">
-          <IconContainer ml={5}>
-            <LinkedInIcon />
-          </IconContainer>
-        </TargetLink>
-      </FadeIn>
-      <FadeIn delayMs={0.5}>
-        <Box ml={5}>
-          <Switch />
-        </Box>
-      </FadeIn>
-    </Flex>
-  </HeaderContainer>
-))
+      <Flex mt={1}>
+        <FadeIn delayMs={0.2}>
+          <TargetLink href="https://github.com/LashaLoi">
+            <IconContainer>
+              <GithubIcon />
+            </IconContainer>
+          </TargetLink>
+        </FadeIn>
+        <FadeIn delayMs={0.3}>
+          <TargetLink href="https://twitter.com/sideswipeloi">
+            <IconContainer ml={5}>
+              <TwitterIcon />
+            </IconContainer>
+          </TargetLink>
+        </FadeIn>
+        <FadeIn delayMs={0.4}>
+          <TargetLink href="https://www.linkedin.com/in/alexey-loi-82b670185/">
+            <IconContainer ml={5}>
+              <LinkedInIcon />
+            </IconContainer>
+          </TargetLink>
+        </FadeIn>
+        <FadeIn delayMs={0.5}>
+          <Box ml={5}>
+            <Switch />
+          </Box>
+        </FadeIn>
+      </Flex>
+    </HeaderContainer>
+  )
+})
