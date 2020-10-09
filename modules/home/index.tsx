@@ -5,7 +5,7 @@ import { FadeIn } from "lib/components/fade/in"
 import { Col } from "lib/components/grid"
 import { Box } from "lib/components/box"
 
-import { getColorByThemeMode } from "lib/getColorByThemeMode"
+import { getColorByThemeMode } from "lib/utils/getColorByThemeMode"
 
 import { Grid, HomeContainer, MainFlex, MainPhoto, Name, Desc, NestedFlex, Line } from "./components"
 

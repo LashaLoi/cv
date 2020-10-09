@@ -4,7 +4,7 @@ import ProgressiveImage from "react-progressive-image"
 
 import { Flex, Box } from "lib/components/box"
 
-import { getColorByThemeMode } from "lib/getColorByThemeMode"
+import { getColorByThemeMode } from "lib/utils/getColorByThemeMode"
 
 const CardContainer = styled(Flex).attrs({
   alignItems: "center",

@@ -9,7 +9,7 @@ import { Box } from "lib/components/box"
 
 import { useHeight } from "lib/hooks/useHeight"
 
-import { getColorByThemeMode } from "lib/getColorByThemeMode"
+import { getColorByThemeMode } from "lib/utils/getColorByThemeMode"
 
 import { theme } from "theme"
 

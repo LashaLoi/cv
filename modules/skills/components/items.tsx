@@ -4,7 +4,7 @@ import styled from "styled-components"
 
 import { Flex } from "lib/components/box"
 
-import { getColorByThemeMode } from "lib/getColorByThemeMode"
+import { getColorByThemeMode } from "lib/utils/getColorByThemeMode"
 
 import Arrow from "../images/arrow.svg"
 
