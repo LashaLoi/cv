@@ -6,7 +6,7 @@ import { FadeIn } from "lib/components/fade/in"
 import { Flex, Box } from "lib/components/box"
 import { Switch } from "lib/components/switch"
 
-import { isServer } from "lib/isServer"
+import { isServer } from "lib/utils/isServer"
 
 import { theme } from "theme"
 

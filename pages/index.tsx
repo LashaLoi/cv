@@ -8,7 +8,7 @@ import { useLocalStorage } from "lib/hooks/useLocalStorage"
 
 import { GlobalStyles } from "theme/global-styles"
 
-import { MotionProvider } from "lib/motion-config"
+import { MotionProvider } from "lib/utils/motion-config"
 
 import { ThemeModeProvider } from "lib/context/theme-mode"
 import { theme } from "theme"
