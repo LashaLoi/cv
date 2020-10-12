@@ -51,4 +51,5 @@ export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   html {
     box-sizing: border-box;
   }
+
 `
